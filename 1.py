@@ -1,29 +1,25 @@
-# 1 задача
-x=int(input('Введите начальную сумму вклада: '))
-y=int(input('Введите желаемую сумму: '))
-p=int(input('Введите процент: '))
+def binary_seach(arr,target):
+    left=0
+    right=len(arr)-1
+    while left <=right:
+        mid=(left+right)//2
+        if arr[mid]==target:
+            return mid
+        elif arr[mid]<target:
+            left=mid+1
+        else:
+            right=mid-1
+    return-1
 
-yrs=0
+arr = [1, 3, 5, 7, 9]
+target = 5
 
-while x<y:
-    x += x*p//100
-    yrs+=1
+print("Массив:", arr)
+print("Ищем число:", target)
 
-print(yrs)
+result = binary_seach(arr, target)
 
-# 2 задача
-n=int(input('Введите кол-во повторений: '))
-count=0
-
-while count < n:
-    print('for - частный случай цикла while')
-    count += 1
-
-# 3 задача
-number=input('введите целое число: ')
-sum=0
-
-for d in number:
-    sum += int(d)
-
-print(sum)
+if result != -1:
+    print(result)
+else:
+    print('Число не найдено')
