@@ -1,20 +1,10 @@
 # 1 задача
 import math
 
-def area():
-    print('Введите стороны треугольника: ')
-    a = float(input('Введите а: '))
-    b = float(input('Введите b: '))
-    c = float(input('Введите c: '))
-
-    if a+b>c and a+c>b and b+c>a:
-        p=(a+b+c)/2
-        area_value=math.sqrt(p*(p-a)*p-b*p-c)
-        print(area_value)
-    else:
-        print('Такого треугольника не существует')
-
-area()
+def calculate_area(a, b, c):
+    if a + b > c and a + c > b and b + c > a:
+        p = (a + b + c) / 2
+    return math.sqrt(p * (p - a) * (p - b) * (p - c))
 
 # 2 задача
 s= '''Было просто пасмурно, дуло с севера
